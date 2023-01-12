@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, url_for, flash, redirect, ses
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import colorama
-
+# Меня зовут Илья я учусь пользоваться GitHub
 colorama.init(autoreset=True)
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ class Workers(db.Model):
     name = db.Column(db.String(50))
     lastname = db.Column(db.String(100))
     age = db.Column(db.Integer)
-    gender = db.Column(db.String(50))
+    gender = db.Column(db.String(50)) 
     salary = db.Column(db.Integer)
     profession = db.Column(db.String(100))
     education = db.Column(db.String(50))
