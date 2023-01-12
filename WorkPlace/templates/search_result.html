@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{{ super() }}
+
+{% block content %}
+<!-- <div class="result__title">
+	<p>Имя</p>
+	<p>Фамилия</p>
+	<p>Возраст</p>
+	<p>Пол</p>
+	<p>Профессия</p>
+	<p>Образование</p>
+	<p>ЗП</p>
+	<p>Откликнуться</p>
+</div> -->
+<div class="result__row">
+	{% for worker in workers %}
+		<div class="result__column">
+			<div class="result__item">
+				<div class="item__column">
+					<div class="item__item">
+						<p>{{ worker.name.title() }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.lastname.title() }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.age }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.gender.title() }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.profession.title() }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.education.title() }}</p>
+					</div>
+					<div class="item__item">
+						<p>{{ worker.salary }}</p>
+					</div>
+					<div class="item__item send_offer">
+						<form id="{{ worker.id }}" action="/search_result" method="post" class="form__result">
+							<input type="text" value="{{ worker.id }}" class="input__worker" name="offer_id">
+							<button type="submit" class="button__worker">Отклик</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor -%}
+</div>
+
+{% endblock %}

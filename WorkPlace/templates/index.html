@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{{ super() }}
+
+
+{% block content %}
+
+<div class="content__row">
+	<a href="{{ url_for('worker_register') }}" class="content__item">
+		<p>Я работник</p>
+	</a>
+	<a href="{{ url_for('search') }}" class="content__item">
+		<p>Я наниматель</p>
+	</a>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{{ super() }}
+
+
+{% block content %}
+
+<div class="content_worker">
+	<div class="content_form">
+		<form action="/worker_register" method="post" class="form">
+			<div class="form__item">
+				<div class="item__title">
+					<p>Фамилия Имя</p>
+				</div>
+				<div class="item__input">
+					<input type="text" class="input" name="name">
+				</div>
+			</div>
+			<div class="form__item">
+				<div class="item__title">
+					<p>Пол</p>
+				</div>
+				<div class="item__input">
+					<input placeholder="Мужской/Женский" type="text" class="input" name="gender">
+				</div>
+			</div>
+			<div class="form__item">		
+				<div class="item__title">
+					<p>Возраст</p>
+				</div>
+				<div class="item__input">
+					<input type="text" class="input" name="age">
+				</div>
+			</div>
+			<div class="form__item">
+				<div class="item__title">
+					<p>Профессия</p>
+				</div>
+				<div class="item__input">
+					<input type="text" class="input" name="profession">
+				</div>
+			</div>
+			<div class="form__item">
+				<div class="item__title">
+					<p>Образование</p>
+				</div>
+				<div class="item__input">
+					<input placeholder="Школа/Среднее/Высшее" type="text" class="input" name="education">
+				</div>
+			</div>
+			<div class="form__item">
+				<div class="item__title">
+					<p>Желаемая зарплата (RUB)</p>
+				</div>
+				<div class="item__input">
+					<input type="text" class="input" name="salary">
+				</div>
+			</div>
+				<div class="item__button">
+					{% for cat, msg in get_flashed_messages(True) %}
+						{% if cat == 'bad' %}
+							<div class="flash bad">
+								<p>{{ msg }}</p>
+							</div>
+						{% elif cat == 'success' %}
+							<div class="flash success">
+								<p>{{ masg }}</p>
+							</div>
+						{% endif %}
+					{% endfor -%}
+					<button type="submit" class="submit">
+						Отправить
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

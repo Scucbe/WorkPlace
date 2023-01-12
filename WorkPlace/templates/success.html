@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{{ super() }}
+
+{% block redir %}
+<meta http-equiv="refresh" content="2;URL={{ url_for('index') }}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="content__success">
+	<p>ОТПРАВЛЕНО</p>
+</div>
+
+{% endblock %}
